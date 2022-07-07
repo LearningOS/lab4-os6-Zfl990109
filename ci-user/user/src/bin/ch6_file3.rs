@@ -17,9 +17,9 @@ pub fn main() -> i32 {
             panic!("failed to crate file");
         }
         let fd = fd as usize;
-        for _ in 0..50 {
-            write(fd, test_str.as_bytes());
-        }
+        // for _ in 0..50 {
+        //     write(fd, test_str.as_bytes());
+        // }
         close(fd);
         assert_eq!(unlink(fname), 0);
         let fd = open(fname, OpenFlags::RDONLY);
